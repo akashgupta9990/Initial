@@ -42,8 +42,11 @@ function processModules (modules) {
 
   var req = require.context('./packages', true, /\/public\/(?!tests|assets|views)(.*)\.js$/);
   req.keys().map(req);
-  req = require.context('./node_modules', true, /\/meanio-(.*)\/public\/(?!tests|assets|views)(.*)\.js$/);
-  req.keys().map(req);
+      /**
+     * Removed reference to meanio-* modules from node_modules. This will be loaded from /packages/contrib/
+     */
+  // req = require.context('./node_modules', true, /\/meanio-(.*)\/public\/(?!tests|assets|views)(.*)\.js$/);
+  // req.keys().map(req);
   angular.module('mean', packageModules);
 }
 
