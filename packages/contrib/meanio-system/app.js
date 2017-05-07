@@ -14,7 +14,7 @@ var SystemPackage = new Module('system');
  * All MEAN packages require registration
  * Dependency injection is used to define required modules
  */
-SystemPackage.register(function(app, database, circles) {
+SystemPackage.register(function(app, database) {
 
   //We enable routing. By default the Package Object is passed to the routes
   SystemPackage.routes(app, database);
@@ -33,9 +33,6 @@ SystemPackage.register(function(app, database, circles) {
 
   // Adding robots and humans txt
   app.useStatic(__dirname + '/public/assets/static');
-
-  circles.registerCircle('authenticated');
-  circles.registerCircle('anonymous');
 
   return SystemPackage;
 });

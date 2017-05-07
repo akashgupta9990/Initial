@@ -1,47 +1,47 @@
 (function() {
   'use strict';
 
-  angular.module('mean.admin').controller('UsersController', ['$scope', 'Global', 'Menus', '$rootScope', '$http', 'Users', 'Circles',
-    function ($scope, Global, Menus, $rootScope, $http, Users, Circles) {
+  angular.module('mean.admin').controller('UsersController', ['$scope', 'Global', 'Menus', '$rootScope', '$http', 'Users',
+    function ($scope, Global, Menus, $rootScope, $http, Users) {
       $scope.global = Global;
       $scope.user = {};
 
-      Circles.mine(function (acl) {
-        var circles = acl.allowed;
+      // Circles.mine(function (acl) {
+      //   var circles = acl.allowed;
 
-        $scope.userSchema = [{
-          title: 'Email',
-          schemaKey: 'email',
-          type: 'email',
-          inTable: true
-        }, {
-          title: 'Name',
-          schemaKey: 'name',
-          type: 'text',
-          inTable: true
-        }, {
-          title: 'Username',
-          schemaKey: 'username',
-          type: 'text',
-          inTable: true
-        }, {
-          title: 'Roles',
-          schemaKey: 'roles',
-          type: 'select',
-          options: circles,
-          inTable: true
-        }, {
-          title: 'Password',
-          schemaKey: 'password',
-          type: 'password',
-          inTable: false
-        }, {
-          title: 'Repeat password',
-          schemaKey: 'confirmPassword',
-          type: 'password',
-          inTable: false
-        }];
-      });
+      //   $scope.userSchema = [{
+      //     title: 'Email',
+      //     schemaKey: 'email',
+      //     type: 'email',
+      //     inTable: true
+      //   }, {
+      //     title: 'Name',
+      //     schemaKey: 'name',
+      //     type: 'text',
+      //     inTable: true
+      //   }, {
+      //     title: 'Username',
+      //     schemaKey: 'username',
+      //     type: 'text',
+      //     inTable: true
+      //   }, {
+      //     title: 'Roles',
+      //     schemaKey: 'roles',
+      //     type: 'select',
+      //     options: circles,
+      //     inTable: true
+      //   }, {
+      //     title: 'Password',
+      //     schemaKey: 'password',
+      //     type: 'password',
+      //     inTable: false
+      //   }, {
+      //     title: 'Repeat password',
+      //     schemaKey: 'confirmPassword',
+      //     type: 'password',
+      //     inTable: false
+      //   }];
+      // });
 
       $scope.init = function () {
         Users.query({}, function (users) {

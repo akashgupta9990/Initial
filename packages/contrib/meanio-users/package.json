@@ -39,8 +39,7 @@
   },
   "_requiredBy": [
     "#USER",
-    "/meanio-admin",
-    "/meanio-circles"
+    "/meanio-admin"
   ],
   "_resolved": "https://registry.npmjs.org/meanio-users/-/meanio-users-0.1.8.tgz",
   "_shasum": "37e1a42af54cad43beb79a6c57817ec000ef2bec",

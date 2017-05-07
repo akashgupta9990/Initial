@@ -11,7 +11,7 @@ var Admin = new Module('admin');
  * Dependency injection is used to define required modules
  */
 
-Admin.register(function (app, auth, database, circles) {
+Admin.register(function (app, auth, database) {
   // var icons = 'admin/assets/img/icons/'
 
   Admin.menus.add({
@@ -53,12 +53,7 @@ Admin.register(function (app, auth, database, circles) {
   Admin.angularDependencies(['ngClipboard', 'mean.users']);
 
   // We enable routing. By default the Package Object is passed to the routes
-  Admin.routes(app, auth, database, circles);
-
-  circles.registerCircle('admin');
-  circles.registerCircle('can delete content', ['admin']);
-  circles.registerCircle('can edit content', ['admin']);
-  circles.registerCircle('can create content', ['admin']);
+  Admin.routes(app, auth, database);
 
   return Admin;
 });

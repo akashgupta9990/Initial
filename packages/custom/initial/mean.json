@@ -5,7 +5,6 @@
   "dependencies": {
     "system": "latest",
     "users": "latest",
-    "circles": "latest",
     "admin": "latest"
   }
 }

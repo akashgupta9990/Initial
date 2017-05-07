@@ -84,15 +84,6 @@ angular.module('mean.users').factory('MeanUser', [ '$rootScope', '$http', '$loca
       this.isAdmin = this.user.roles.indexOf('admin') > -1;
       var userObj = this.user;
       var self = this;
-      // Add circles info to user
-      $http.get('/api/circles/mine').then(function(response) {
-        self.acl = response.data;
-        if (destination) {
-          $location.path(destination);
-        }
-        $rootScope.$emit('loggedin', userObj);
-        Global.authenticate(userObj);
-      });
     };
 
     MeanUserKlass.prototype.onIdFail = function (response) {
